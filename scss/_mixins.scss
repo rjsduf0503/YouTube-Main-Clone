@@ -1,0 +1,42 @@
+@use 'sass:list';
+@use './variables' as v;
+
+@mixin flex($direction: row, $justify-content: flex-start, $align-items: stretch) {
+	@if not list.index((v.$flex-directions), $direction) {
+		@error "#{$direction} is not a valid direction. Expected one of #{v.$flex-directions}.";
+	}
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify-content;
+	align-items: $align-items;
+}
+
+@mixin circular-icon(
+	$margin: (
+		0 0 0 0,
+	),
+	$bg: transparent,
+	$hover-bg: transparent
+) {
+	@include flex($justify-content: center, $align-items: center);
+	min-width: 0;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	margin: $margin;
+	cursor: pointer;
+	background-color: $bg;
+
+	@if $hover-bg != transparent {
+		&:hover {
+			background-color: $hover-bg;
+		}
+	}
+}
+
+@mixin icon($bg: transparent, $size: 18px, $color: #f1f1f1) {
+	background-color: $bg;
+	font-size: $size;
+	color: $color;
+}
