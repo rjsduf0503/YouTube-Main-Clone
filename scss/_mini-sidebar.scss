@@ -1,0 +1,59 @@
+@use './mixins.scss' as m;
+@use './medias.scss' as media;
+@use './variables.scss' as v;
+
+.mini-sidebar {
+	@include media.side-to-m() {
+		display: none;
+	}
+	@include m.flex($direction: column);
+
+	width: 4rem;
+	height: 100%;
+	padding: 0 0.25rem;
+
+	@include m.fix-position($top: 0, $left: 0);
+
+	z-index: 1;
+
+	&-spacer {
+		width: 100%;
+		min-height: 3.5rem;
+	}
+
+	&-content {
+		@include m.flex($direction: column);
+		min-height: calc(100% - 3.5rem);
+
+		&s {
+			@include m.flex($direction: column);
+			margin-top: 0.25rem;
+
+			&-items {
+				@include m.flex($direction: column, $align-items: center, $justify-content: center);
+				padding: 1rem 0 0.875rem;
+				border-radius: 0.625rem;
+
+				.items-text {
+					max-width: 100%;
+					overflow: hidden;
+					white-space: nowrap;
+					font-size: 0.75rem;
+					font-weight: v.$font-normal;
+					line-height: 1.5rem;
+					max-height: 1.5rem;
+				}
+
+				.button,
+				.items-text {
+					background: transparent;
+				}
+
+				&:hover {
+					cursor: pointer;
+					background-color: v.$dark-theme-border-2;
+				}
+			}
+		}
+	}
+}

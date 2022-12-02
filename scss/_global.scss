@@ -1,0 +1,13 @@
+@use './variables.scss' as v;
+
+*,
+body,
+#root {
+	background-color: v.$dark-theme-bg;
+	color: v.$dark-theme-text;
+	font-family: v.$primary-font-family;
+}
+
+a {
+	text-decoration: none;
+}

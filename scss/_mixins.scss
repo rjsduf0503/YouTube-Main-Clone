@@ -17,7 +17,7 @@
 	),
 	$bg: transparent,
 	$hover-bg: transparent,
-  $size: 40px,
+	$size: 40px
 ) {
 	@include flex($justify-content: center, $align-items: center);
 	min-width: 0;
@@ -47,4 +47,12 @@
 	height: $size;
 	border-radius: 50%;
 	content: url($url);
+}
+
+@mixin fix-position($position: fixed, $top: null, $right: null, $bottom: null, $left: null) {
+	position: $position;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
 }
