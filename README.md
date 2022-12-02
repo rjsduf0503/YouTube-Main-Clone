@@ -4,9 +4,13 @@
 
 <img src='https://user-images.githubusercontent.com/34560965/205378085-841af8de-08e9-48a0-9901-7ea7f52172b3.gif' width='100%' />
 
+
 > cd /
+>
 > npm install percel
+>
 > percel index.html
+
 ## 👩‍💻 요구 사항과 구현 내용 <!-- 기능을 Commit 별로 잘개 쪼개고, Commit 별로 설명해주세요 -->
 ### [반응형 header 구현](https://github.com/prgrms-fe-devcourse/FEDC3-7_CSS/commit/dff1126359e6bba97a511c244e3831b6681cd986)
 ### [sidebar, mini-sidebar, modal-sidebar style 구현](https://github.com/prgrms-fe-devcourse/FEDC3-7_CSS/commit/22461b99b4edc5fe7f4a918d7bcd3fda8f5daff6)
