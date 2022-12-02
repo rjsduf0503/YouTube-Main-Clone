@@ -3,11 +3,14 @@ $dark-theme-bg-2: #181818;
 $dark-theme-bg-3: hsla(0, 0%, 100%, 0.08);
 $dark-theme-bg-4: hsl(0, 0%, 7%);
 $dark-theme-hover-bg: lighten($dark-theme-bg-2, 7%);
+$dark-theme-hover-bg-2: lighten($dark-theme-bg-2, 20%);
 $dark-theme-border: hsl(0, 0%, 18.82%);
 $dark-theme-border-2: rgba(255, 255, 255, 0.1);
 $dark-theme-text: #f1f1f1;
 $dark-theme-text-2: #aaa;
 
 $primary-color: #ff0000;
+$disabled-color: #717171;
+$activated-color: #3ea6ff;
 
 $flex-directions: (row, column, row-reverse, column-reverse);

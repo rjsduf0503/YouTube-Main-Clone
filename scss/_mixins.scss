@@ -16,13 +16,14 @@
 		0 0 0 0,
 	),
 	$bg: transparent,
-	$hover-bg: transparent
+	$hover-bg: transparent,
+  $size: 40px,
 ) {
 	@include flex($justify-content: center, $align-items: center);
 	min-width: 0;
 	border-radius: 50%;
-	width: 40px;
-	height: 40px;
+	width: $size;
+	height: $size;
 	padding: 0;
 	margin: $margin;
 	cursor: pointer;
@@ -39,4 +40,11 @@
 	background-color: $bg;
 	font-size: $size;
 	color: $color;
+}
+
+@mixin circular-image($size: 24px, $url: '') {
+	width: $size;
+	height: $size;
+	border-radius: 50%;
+	content: url($url);
 }
