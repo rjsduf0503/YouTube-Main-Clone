@@ -3,7 +3,7 @@
 @use '../utils/variables.scss' as var;
 
 .mini-sidebar {
-	@include media.side-to-m() {
+	@include media.mm() {
 		display: none;
 	}
 	@include mixin.flex($direction: column);

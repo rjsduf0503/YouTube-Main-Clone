@@ -5,7 +5,7 @@
 .modal {
 	display: none;
 
-	@include media.side-to-m() {
+	@include media.mm() {
 		z-index: 3;
 		@include mixin.fix-position($top: 0, $left: 0);
 

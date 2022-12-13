@@ -1,61 +1,45 @@
-@mixin xsm {
+@mixin xxsm {
 	@media (max-width: 511px) {
 		@content;
 	}
 }
 
+@mixin xsm {
+	@media (max-width: 657px) {
+		@content;
+	}
+}
+
 @mixin sm {
-	@media (min-width: 512px) and (max-width: 791px) {
+	@media (max-width: 791px) {
 		@content;
 	}
 }
 
 @mixin m {
-	@media (min-width: 792px) and (max-width: 1143px) {
+	@media (max-width: 1143px) {
 		@content;
 	}
 }
 
-@mixin l {
-	@media (min-width: 1144px) and (max-width: 1965px) {
-		@content;
-	}
-}
-@mixin xl {
-	@media (min-width: 1966px) and (max-width: 2303px) {
-		@content;
-	}
-}
-@mixin xxl {
-	@media (min-width: 2304px) {
-		@content;
-	}
-}
-
-@mixin side-sm {
-	@media (max-width: 791px) {
-		@content;
-	}
-}
-@mixin side-m {
-	@media (min-width: 792px) and (max-width: 1313px) {
-		@content;
-	}
-}
-@mixin side-to-m {
+@mixin mm {
 	@media (max-width: 1313px) {
 		@content;
 	}
 }
 
-@mixin side-l {
-	@media (min-width: 1314px) {
+@mixin l {
+	@media (max-width: 1965px) {
 		@content;
 	}
 }
-
-@mixin header-sm {
-	@media (max-width: 657px) {
+@mixin xl {
+	@media (max-width: 2303px) {
+		@content;
+	}
+}
+@mixin xxl {
+	@media (min-width: 2304px) {
 		@content;
 	}
 }

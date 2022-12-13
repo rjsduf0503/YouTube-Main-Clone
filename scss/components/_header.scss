@@ -42,7 +42,7 @@
 
 	&-center {
 		@include mixin.flex($justify-content: center, $align-items: center);
-		@include media.header-sm() {
+		@include media.xsm() {
 			flex: 1;
 			justify-content: flex-end;
 		}
@@ -53,7 +53,7 @@
 		.visible-when-mobile {
 			display: none;
 
-			@include media.header-sm() {
+			@include media.xsm() {
 				display: block;
 				@include mixin.circular-icon(
 					$margin: (
@@ -66,7 +66,7 @@
 
 		.search-container {
 			@include mixin.flex($align-items: center);
-			@include media.header-sm() {
+			@include media.xsm() {
 				display: none;
 			}
 			margin: 0 0 0 2.5rem;
@@ -116,7 +116,7 @@
 					background-color: transparent;
 
 					i {
-            @include mixin.font-set();
+						@include mixin.font-set();
 						background-color: transparent;
 					}
 				}
@@ -169,7 +169,7 @@
 	}
 	&-end {
 		@include mixin.flex($justify-content: flex-end, $align-items: center);
-		@include media.header-sm {
+		@include media.xsm {
 			min-width: 0;
 		}
 

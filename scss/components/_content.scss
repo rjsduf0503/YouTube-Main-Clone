@@ -3,12 +3,11 @@
 @use '../utils/variables.scss' as var;
 
 .content {
-	@include media.side-sm() {
-		margin-left: 0;
-	}
-
-	@include media.side-m() {
+	@include media.mm() {
 		margin-left: 4rem;
+	}
+	@include media.sm() {
+		margin-left: 0;
 	}
 
 	@include mixin.flex($direction: column);
@@ -21,11 +20,8 @@
 	&-header {
 		@include mixin.flex();
 		@include mixin.fix-position();
-		width: 100%;
 
-		@include media.side-m() {
-			width: calc(100% - 4rem);
-		}
+		width: 100%;
 
 		&-scroller {
 			position: relative;
@@ -83,31 +79,35 @@
 
 		&-container {
 			margin: 0 0.5rem 2.5rem 0.5rem;
-			@include media.xsm() {
-				flex: 1 0 calc(100% - 1rem);
-				max-width: calc(100% - 1rem);
-			}
-			@include media.sm() {
-				flex: 1 1 calc(50% - 2rem);
-				max-width: calc(50% - 1rem);
-			}
-			@include media.m() {
-				flex: 1 1 calc(100% / 3 - 3rem);
-				max-width: calc(100% / 3 - 1rem);
-			}
-			@include media.l() {
-				flex: 1 1 calc(25% - 4rem);
-				max-width: calc(25% - 1rem);
+			@include media.xxl() {
+				flex: 1 1 calc(100% / 6 - 6rem);
+				max-width: calc(100% / 6 - 1rem);
+				min-width: 20rem;
 			}
 			@include media.xl() {
 				flex: 1 1 calc(20% - 5rem);
 				max-width: calc(20% - 1rem);
 				min-width: 20rem;
 			}
-			@include media.xxl() {
-				flex: 1 1 calc(100% / 6 - 6rem);
-				max-width: calc(100% / 6 - 1rem);
-				min-width: 20rem;
+			@include media.l() {
+				flex: 1 1 calc(25% - 4rem);
+				max-width: calc(25% - 1rem);
+				min-width: 0;
+			}
+			@include media.m() {
+				flex: 1 1 calc(100% / 3 - 3rem);
+				max-width: calc(100% / 3 - 1rem);
+				min-width: 0;
+			}
+			@include media.sm() {
+				flex: 1 1 calc(50% - 2rem);
+				max-width: calc(50% - 1rem);
+				min-width: 0;
+			}
+			@include media.xxsm() {
+				flex: 1 0 calc(100% - 1rem);
+				max-width: calc(100% - 1rem);
+				min-width: 0;
 			}
 
 			#{$contents}-header {
@@ -143,7 +143,7 @@
 					padding-right: 1.5rem;
 
 					&-title {
-						@include mixin.font-set($weight:var.$font-thick);
+						@include mixin.font-set($weight: var.$font-thick);
 						max-width: 100%;
 						margin: 0.75rem 0 0.5rem 0;
 						line-height: 1.4rem;
