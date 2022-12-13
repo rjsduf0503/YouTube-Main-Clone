@@ -39,6 +39,7 @@
 			}
 
 			.types {
+				@include mixin.font-set($size: 0.875rem);
 				border-radius: 0.5rem;
 				background-color: var.$dark-theme-border-2;
 
@@ -51,8 +52,6 @@
 				align-items: center;
 				display: inline-flex;
 
-				font-size: 0.875rem;
-				font-weight: var.$font-normal;
 				line-height: 0.875rem;
 
 				white-space: nowrap;
@@ -144,11 +143,10 @@
 					padding-right: 1.5rem;
 
 					&-title {
+						@include mixin.font-set($weight:var.$font-thick);
 						max-width: 100%;
 						margin: 0.75rem 0 0.5rem 0;
-						font-size: 1rem;
 						line-height: 1.4rem;
-						font-weight: var.$font-thick;
 						-webkit-line-clamp: 2;
 						display: -webkit-box;
 						-webkit-box-orient: vertical;
@@ -157,8 +155,8 @@
 
 					&-channel {
 						@include mixin.flex($align-items: center);
+						@include mixin.font-set($size: 0.8rem);
 						max-width: 100%;
-						font-size: 0.8rem;
 
 						&-name {
 							color: var.$dark-theme-text-2;
@@ -172,7 +170,7 @@
 						&-badge {
 							margin: 0 0.5rem 0 0.25rem;
 							.badge {
-								color: var.$dark-theme-text-2;
+								@include mixin.font-set($color: var.$dark-theme-text-2);
 							}
 						}
 					}
@@ -181,8 +179,7 @@
 						@include mixin.flex($align-items: center);
 
 						.item {
-							color: var.$dark-theme-text-2;
-							font-size: 0.8rem;
+							@include mixin.font-set($size: 0.8rem, $color: var.$dark-theme-text-2);
 						}
 
 						&-time {

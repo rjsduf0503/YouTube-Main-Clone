@@ -56,3 +56,9 @@
 	bottom: $bottom;
 	left: $left;
 }
+
+@mixin font-set($size: 1rem, $color: var.$dark-theme-text, $weight: var.$font-normal) {
+	font-size: $size;
+	color: $color;
+	font-weight: $weight;
+}

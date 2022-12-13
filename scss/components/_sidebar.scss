@@ -54,11 +54,10 @@
 				}
 
 				&-header {
+					@include mixin.font-set();
 					text-transform: none;
 					letter-spacing: unset;
 					padding: 0.375rem 0.75rem 0.25rem;
-					font-size: 1rem;
-					font-weight: var.$font-normal;
 				}
 
 				&-items {
@@ -84,8 +83,8 @@
 					}
 
 					.button {
+						@include mixin.font-set();
 						background: transparent;
-						font-size: 1rem;
 						width: 2.5rem;
 
 						&.youtube {
@@ -94,7 +93,7 @@
 					}
 
 					.icon {
-						font-size: 0.8rem;
+						@include mixin.font-set($size: 0.8rem);
 						background: transparent;
 						margin-right: 0.75rem;
 
@@ -113,12 +112,11 @@
 					}
 
 					.items-text {
+            @include mixin.font-set($size: 0.875rem);
 						background: transparent;
 						overflow: hidden;
 						white-space: nowrap;
 						text-overflow: ellipsis;
-						font-size: 0.875rem;
-						font-weight: var.$font-normal;
 						flex: 1;
 						flex-basis: 1e-9px;
 					}
@@ -142,9 +140,8 @@
 						color: var.$dark-theme-text-2;
 						display: inline-block;
 					}
+          @include mixin.font-set($size: 0.875rem, $weight: var.$font-thick);
 					padding: 1rem 1.5rem 0;
-					font-size: 0.875rem;
-					font-weight: var.$font-thick;
 					line-height: 1.2rem;
 				}
 				&-secondary {
@@ -153,21 +150,19 @@
 						color: var.$dark-theme-text-2;
 						display: inline-block;
 					}
+          @include mixin.font-set($size: 0.875rem, $weight: var.$font-thick);
 					overflow: hidden;
-					font-size: 0.875rem;
-					font-weight: var.$font-thick;
 					line-height: 1.2rem;
 					padding: 0.75rem 1.5rem 0;
 				}
 			}
 			#{$sidebar}-copyright {
+        @include mixin.font-set($size: 0.75rem);
 				direction: ltr;
 				unicode-bidi: isolate;
 				padding: 1rem 1.5rem;
 				color: var.$disabled-color;
-				font-size: 0.75rem;
 				line-height: 1.1rem;
-				font-weight: var.$font-normal;
 				a {
 					color: var.$activated-color;
 				}

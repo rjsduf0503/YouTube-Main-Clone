@@ -35,11 +35,10 @@
 				border-radius: 0.625rem;
 
 				.items-text {
+					@include mixin.font-set($size: 0.75rem);
 					max-width: 100%;
 					overflow: hidden;
 					white-space: nowrap;
-					font-size: 0.75rem;
-					font-weight: var.$font-normal;
 					line-height: 1.5rem;
 					max-height: 1.5rem;
 				}
