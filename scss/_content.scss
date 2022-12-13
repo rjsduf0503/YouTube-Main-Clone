@@ -115,7 +115,7 @@
 				max-width: 100%;
 				cursor: pointer;
 				padding-top: 56.25%;
-				background-image: url(https://i.ytimg.com/vi/jNZJEfVD3-E/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA5mtoHbXsPEGSRemm_O8-Ak5Yu8Q);
+				background-image: url(v.$image);
 				background-repeat: no-repeat;
 				background-size: contain;
 			}
@@ -132,10 +132,7 @@
 					margin-right: 0.75rem;
 
 					.avatar {
-						@include m.circular-image(
-							$url:
-								'https://yt3.ggpht.com/ytc/AMLnZu8cElSA61V6cMGF7txxKs10FrPW9pfA7CtrzWv66g=s88-c-k-c0x00ffffff-no-rj'
-						);
+						@include m.circular-image($url: v.$avatar);
 						max-width: 2.25rem;
 						max-height: 2.25rem;
 					}
