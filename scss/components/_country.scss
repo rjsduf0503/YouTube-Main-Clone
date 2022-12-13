@@ -1,0 +1,9 @@
+@use '../utils/mixins.scss' as mixin;
+@use '../utils/variables.scss' as var;
+
+.country-code {
+	@include mixin.fix-position($position: absolute, $top: 0, $right: 0);
+	margin: 0.75rem 0 0 -0.625rem;
+	font-size: 0.625rem;
+	font-weight: var.$font-thin;
+}

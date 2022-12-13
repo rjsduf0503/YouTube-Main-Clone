@@ -1,6 +1,6 @@
-@use './mixins.scss' as m;
-@use './medias.scss' as media;
-@use './variables.scss' as v;
+@use '../utils/mixins.scss' as mixin;
+@use '../utils/medias.scss' as media;
+@use '../utils/variables.scss' as var;
 
 .content {
 	@include media.side-sm() {
@@ -11,7 +11,7 @@
 		margin-left: 4rem;
 	}
 
-	@include m.flex($direction: column);
+	@include mixin.flex($direction: column);
 
 	flex: 1;
 	overflow-y: auto;
@@ -19,8 +19,8 @@
 	min-height: 100%;
 
 	&-header {
-		@include m.flex();
-		@include m.fix-position();
+		@include mixin.flex();
+		@include mixin.fix-position();
 		width: 100%;
 
 		@include media.side-m() {
@@ -40,7 +40,7 @@
 
 			.types {
 				border-radius: 0.5rem;
-				background-color: v.$dark-theme-border-2;
+				background-color: var.$dark-theme-border-2;
 
 				height: 2rem;
 				min-width: 0.75rem;
@@ -52,19 +52,19 @@
 				display: inline-flex;
 
 				font-size: 0.875rem;
-				font-weight: v.$font-normal;
+				font-weight: var.$font-normal;
 				line-height: 0.875rem;
 
 				white-space: nowrap;
 
 				&:hover {
-					background-color: v.$dark-theme-hover-bg-2;
+					background-color: var.$dark-theme-hover-bg-2;
 				}
 
 				&:first-child {
 					margin-left: 1.5rem;
-					background-color: v.$dark-theme-text;
-					color: v.$dark-theme-bg;
+					background-color: var.$dark-theme-text;
+					color: var.$dark-theme-bg;
 				}
 				&:last-child {
 					margin-right: 1.5rem;
@@ -74,7 +74,7 @@
 	}
 
 	&s {
-		@include m.flex();
+		@include mixin.flex();
 		flex-wrap: wrap;
 
 		width: calc(100% - 2rem);
@@ -115,13 +115,13 @@
 				max-width: 100%;
 				cursor: pointer;
 				padding-top: 56.25%;
-				background-image: url(v.$image);
+				background-image: url(var.$image);
 				background-repeat: no-repeat;
 				background-size: contain;
 			}
 
 			#{$contents}-details {
-				@include m.flex();
+				@include mixin.flex();
 				flex: auto;
 				cursor: pointer;
 				max-width: 100%;
@@ -132,14 +132,14 @@
 					margin-right: 0.75rem;
 
 					.avatar {
-						@include m.circular-image($url: v.$avatar);
+						@include mixin.circular-image($url: var.$avatar);
 						max-width: 2.25rem;
 						max-height: 2.25rem;
 					}
 				}
 
 				.meta {
-					@include m.flex($direction: column);
+					@include mixin.flex($direction: column);
 					overflow-x: hidden;
 					padding-right: 1.5rem;
 
@@ -148,7 +148,7 @@
 						margin: 0.75rem 0 0.5rem 0;
 						font-size: 1rem;
 						line-height: 1.4rem;
-						font-weight: v.$font-thick;
+						font-weight: var.$font-thick;
 						-webkit-line-clamp: 2;
 						display: -webkit-box;
 						-webkit-box-orient: vertical;
@@ -156,12 +156,12 @@
 					}
 
 					&-channel {
-						@include m.flex($align-items: center);
+						@include mixin.flex($align-items: center);
 						max-width: 100%;
 						font-size: 0.8rem;
 
 						&-name {
-							color: v.$dark-theme-text-2;
+							color: var.$dark-theme-text-2;
 							display: inline-block;
 							overflow: hidden;
 							text-overflow: ellipsis;
@@ -172,16 +172,16 @@
 						&-badge {
 							margin: 0 0.5rem 0 0.25rem;
 							.badge {
-								color: v.$dark-theme-text-2;
+								color: var.$dark-theme-text-2;
 							}
 						}
 					}
 
 					&-etc {
-						@include m.flex($align-items: center);
+						@include mixin.flex($align-items: center);
 
 						.item {
-							color: v.$dark-theme-text-2;
+							color: var.$dark-theme-text-2;
 							font-size: 0.8rem;
 						}
 
