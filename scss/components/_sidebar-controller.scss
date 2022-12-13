@@ -4,64 +4,46 @@
 	display: none;
 
 	&:checked ~ .sidebar {
-		& {
-			display: none;
-		}
+    display: none;
 	}
 
 	&:not(:checked) ~ .mini-sidebar {
-		& {
-			display: none;
-		}
+    display: none;
 	}
 
 	&:checked ~ .content {
-		& {
-			margin-left: 4rem;
-		}
+    margin-left: 4rem;
 	}
 
 	@include media.side-sm() {
 		&:checked ~ .content {
-			& {
-				margin-left: 0;
-			}
+      margin-left: 0;
 		}
 	}
 
 	@include media.side-m() {
 		&:not(:checked) ~ .mini-sidebar {
-			& {
-				display: flex;
-			}
+      display: flex;
 		}
 	}
 
 	@include media.side-to-m() {
 		&:checked ~ .modal {
-			& {
-				display: block;
-			}
+      display: block;
 		}
 
 		&:checked ~ .modal .modal-sidebar .sidebar {
-			& {
-				display: flex;
-			}
+      display: flex;
 		}
 	}
 
 	@include media.side-l() {
 		&:checked ~ .content .content-header {
-			& {
-				width: calc(100% - 4rem);
-			}
+      width: calc(100% - 4rem);
 		}
 
 		&:not(:checked) ~ .content .content-header {
-			& {
-				width: calc(100% - 16rem);
-			}
+      width: calc(100% - 16rem);
 		}
 	}
 }
