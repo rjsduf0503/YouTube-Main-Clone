@@ -1,9 +1,9 @@
-@use './mixins.scss' as m;
-@use './medias.scss' as media;
-@use './variables.scss' as v;
+@use '../utils/mixins.scss' as mixin;
+@use '../utils/medias.scss' as media;
+@use '../utils/variables.scss' as var;
 
 .sidebar {
-	@include media.side-to-m() {
+	@include media.mm() {
 		display: none;
 	}
 	$sidebar: &;
@@ -11,17 +11,17 @@
 	width: 16rem;
 	height: 100%;
 
-	@include m.fix-position($top: 0, $left: 0);
+	@include mixin.fix-position($top: 0, $left: 0);
 	z-index: 1;
 
-	@include m.flex($direction: column);
+	@include mixin.flex($direction: column);
 	&-spacer {
 		width: 100%;
 		min-height: 3.5rem;
 	}
 
 	&-content {
-		@include m.flex($direction: column);
+		@include mixin.flex($direction: column);
 
 		min-height: calc(100% - 3.5rem);
 
@@ -29,9 +29,10 @@
 		flex: 1;
 		flex-basis: 1e-9px;
 		overflow-y: auto;
+		overscroll-behavior: contain;
 
 		&::after {
-			@include m.fix-position($position: absolute, $top: 0, $bottom: 0, $left: 100%);
+			@include mixin.fix-position($position: absolute, $top: 0, $bottom: 0, $left: 100%);
 
 			visibility: visible;
 			width: 1.25rem;
@@ -41,7 +42,7 @@
 		&s {
 			&-section {
 				padding: 0.75rem;
-				border-bottom: 1px solid v.$dark-theme-border-2;
+				border-bottom: 1px solid var.$dark-theme-border-2;
 
 				&-spacer {
 					min-height: 0.75rem;
@@ -50,30 +51,29 @@
 
 				&-line {
 					width: 100%;
-					border-bottom: 1px solid v.$dark-theme-border-2;
+					border-bottom: 1px solid var.$dark-theme-border-2;
 				}
 
 				&-header {
+					@include mixin.font-set();
 					text-transform: none;
 					letter-spacing: unset;
 					padding: 0.375rem 0.75rem 0.25rem;
-					font-size: 1rem;
-					font-weight: v.$font-normal;
 				}
 
 				&-items {
-					@include m.flex($align-items: center);
+					@include mixin.flex($align-items: center);
 					padding: 0 0.75rem;
 					min-height: 2.5rem;
 					cursor: pointer;
 					box-sizing: border-box;
 					outline: 0;
-					color: v.$dark-theme-text;
+					color: var.$dark-theme-text;
 
 					&:hover {
 						border-radius: 0.625rem;
 						width: calc(100% - 0.75rem);
-						background-color: v.$dark-theme-border-2;
+						background-color: var.$dark-theme-border-2;
 
 						.icon {
 							margin-right: 0;
@@ -84,26 +84,26 @@
 					}
 
 					.button {
+						@include mixin.font-set();
 						background: transparent;
-						font-size: 1rem;
 						width: 2.5rem;
 
 						&.youtube {
-							color: v.$primary-color;
+							color: var.$primary-color;
 						}
 					}
 
 					.icon {
-						font-size: 0.8rem;
+						@include mixin.font-set($size: 0.8rem);
 						background: transparent;
 						margin-right: 0.75rem;
 
 						&.live {
-							color: v.$primary-color;
+							color: var.$primary-color;
 						}
 						&.dot {
-							@include m.circular-icon(
-								$bg: v.$activated-color,
+							@include mixin.circular-icon(
+								$bg: var.$activated-color,
 								$size: 0.25rem,
 								$margin: (
 									0 1rem 0 0,
@@ -113,18 +113,17 @@
 					}
 
 					.items-text {
+						@include mixin.font-set($size: 0.875rem);
 						background: transparent;
 						overflow: hidden;
 						white-space: nowrap;
 						text-overflow: ellipsis;
-						font-size: 0.875rem;
-						font-weight: v.$font-normal;
 						flex: 1;
 						flex-basis: 1e-9px;
 					}
 
 					.channel-avatar {
-						@include m.circular-image(
+						@include mixin.circular-image(
 							$url:
 								'https://yt3.ggpht.com/ytc/AMLnZu8cElSA61V6cMGF7txxKs10FrPW9pfA7CtrzWv66g=s88-c-k-c0x00ffffff-no-rj'
 						);
@@ -139,37 +138,34 @@
 				&-primary {
 					a {
 						margin-right: 0.5rem;
-						color: v.$dark-theme-text-2;
+						color: var.$dark-theme-text-2;
 						display: inline-block;
 					}
+					@include mixin.font-set($size: 0.875rem, $weight: var.$font-thick);
 					padding: 1rem 1.5rem 0;
-					font-size: 0.875rem;
-					font-weight: v.$font-thick;
 					line-height: 1.2rem;
 				}
 				&-secondary {
 					a {
 						margin-right: 0.5rem;
-						color: v.$dark-theme-text-2;
+						color: var.$dark-theme-text-2;
 						display: inline-block;
 					}
+					@include mixin.font-set($size: 0.875rem, $weight: var.$font-thick);
 					overflow: hidden;
-					font-size: 0.875rem;
-					font-weight: v.$font-thick;
 					line-height: 1.2rem;
 					padding: 0.75rem 1.5rem 0;
 				}
 			}
 			#{$sidebar}-copyright {
+				@include mixin.font-set($size: 0.75rem);
 				direction: ltr;
 				unicode-bidi: isolate;
 				padding: 1rem 1.5rem;
-				color: v.$disabled-color;
-				font-size: 0.75rem;
+				color: var.$disabled-color;
 				line-height: 1.1rem;
-				font-weight: v.$font-normal;
 				a {
-					color: v.$activated-color;
+					color: var.$activated-color;
 				}
 			}
 		}

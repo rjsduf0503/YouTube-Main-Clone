@@ -1,9 +1,9 @@
 @use 'sass:list';
-@use './variables' as v;
+@use './variables' as var;
 
 @mixin flex($direction: row, $justify-content: flex-start, $align-items: stretch) {
-	@if not list.index((v.$flex-directions), $direction) {
-		@error "#{$direction} is not a valid direction. Expected one of #{v.$flex-directions}.";
+	@if not list.index((var.$flex-directions), $direction) {
+		@error "#{$direction} is not a valid direction. Expected one of #{var.$flex-directions}.";
 	}
 	display: flex;
 	flex-direction: $direction;
@@ -55,4 +55,10 @@
 	right: $right;
 	bottom: $bottom;
 	left: $left;
+}
+
+@mixin font-set($size: 1rem, $color: var.$dark-theme-text, $weight: var.$font-normal) {
+	font-size: $size;
+	color: $color;
+	font-weight: $weight;
 }

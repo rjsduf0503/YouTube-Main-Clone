@@ -1,0 +1,45 @@
+@mixin xxsm {
+	@media (max-width: 511px) {
+		@content;
+	}
+}
+
+@mixin xsm {
+	@media (max-width: 657px) {
+		@content;
+	}
+}
+
+@mixin sm {
+	@media (max-width: 791px) {
+		@content;
+	}
+}
+
+@mixin m {
+	@media (max-width: 1143px) {
+		@content;
+	}
+}
+
+@mixin mm {
+	@media (max-width: 1313px) {
+		@content;
+	}
+}
+
+@mixin l {
+	@media (max-width: 1965px) {
+		@content;
+	}
+}
+@mixin xl {
+	@media (max-width: 2303px) {
+		@content;
+	}
+}
+@mixin xxl {
+	@media (min-width: 2304px) {
+		@content;
+	}
+}

@@ -1,0 +1,62 @@
+@use '../utils/medias.scss' as media;
+
+#sidebar-toggle {
+	display: none;
+
+	&:checked ~ .sidebar {
+		display: none;
+	}
+
+	&:not(:checked) ~ .mini-sidebar {
+		display: none;
+	}
+
+	&:checked ~ .content {
+		margin-left: 4rem;
+	}
+
+	@include media.mm() {
+		&:not(:checked) ~ .mini-sidebar {
+			display: flex;
+		}
+
+		&:checked ~ .modal {
+			display: block;
+		}
+
+		&:checked ~ .modal .modal-sidebar .sidebar {
+			display: flex;
+		}
+	}
+
+	@include media.sm() {
+		&:checked ~ .content {
+			margin-left: 0;
+		}
+
+		&:not(:checked) ~ .mini-sidebar {
+			display: none;
+		}
+	}
+
+	&:checked ~ .content .content-header {
+		@include media.mm() {
+			width: calc(100% - 4rem);
+		}
+		@include media.sm() {
+			width: 100%;
+		}
+		width: calc(100% - 4rem);
+	}
+
+	&:not(:checked) ~ .content .content-header {
+		@include media.mm() {
+			width: calc(100% - 4rem);
+		}
+		@include media.sm() {
+			width: 100%;
+		}
+		width: calc(100% - 16rem);
+	}
+	// @include media.side-l() {
+}

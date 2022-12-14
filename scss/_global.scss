@@ -1,11 +1,11 @@
-@use './variables.scss' as v;
+@use './utils/variables.scss' as var;
 
 *,
 body,
 #root {
-	background-color: v.$dark-theme-bg;
-	color: v.$dark-theme-text;
-	font-family: v.$primary-font-family;
+	background-color: var.$dark-theme-bg;
+	color: var.$dark-theme-text;
+	font-family: var.$primary-font-family;
 }
 
 a {

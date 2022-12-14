@@ -1,24 +1,24 @@
-@use './mixins.scss' as m;
-@use './medias.scss' as media;
-@use './variables.scss' as v;
+@use '../utils/mixins.scss' as mixin;
+@use '../utils/medias.scss' as media;
+@use '../utils/variables.scss' as var;
 
 .header {
-	@include m.flex($justify-content: space-between, $align-items: center);
-	@include m.fix-position($top: 0, $right: 0, $left: 0);
+	@include mixin.flex($justify-content: space-between, $align-items: center);
+	@include mixin.fix-position($top: 0, $right: 0, $left: 0);
 
 	height: 3.5rem;
 	padding: 0 1rem;
 	z-index: 2;
 
 	&-start {
-		@include m.flex($align-items: center);
+		@include mixin.flex($align-items: center);
 
 		.hamburger-icon {
-			@include m.circular-icon(
+			@include mixin.circular-icon(
 				$margin: (
 					0 0.5rem 0 0,
 				),
-				$hover-bg: v.$dark-theme-hover-bg
+				$hover-bg: var.$dark-theme-hover-bg
 			);
 		}
 	}
@@ -30,19 +30,19 @@
 		position: relative;
 
 		&-icon-wrapper {
-			fill: v.$primary-color;
+			fill: var.$primary-color;
 		}
 		&-icon-inner {
-			fill: v.$dark-theme-text;
+			fill: var.$dark-theme-text;
 		}
 		&-text {
-			fill: v.$dark-theme-text;
+			fill: var.$dark-theme-text;
 		}
 	}
 
 	&-center {
-		@include m.flex($justify-content: center, $align-items: center);
-		@include media.header-sm() {
+		@include mixin.flex($justify-content: center, $align-items: center);
+		@include media.xsm() {
 			flex: 1;
 			justify-content: flex-end;
 		}
@@ -53,20 +53,20 @@
 		.visible-when-mobile {
 			display: none;
 
-			@include media.header-sm() {
+			@include media.xsm() {
 				display: block;
-				@include m.circular-icon(
+				@include mixin.circular-icon(
 					$margin: (
 						0 0 0 0.25rem,
 					),
-					$hover-bg: v.$dark-theme-hover-bg
+					$hover-bg: var.$dark-theme-hover-bg
 				);
 			}
 		}
 
 		.search-container {
-			@include m.flex($align-items: center);
-			@include media.header-sm() {
+			@include mixin.flex($align-items: center);
+			@include media.xsm() {
 				display: none;
 			}
 			margin: 0 0 0 2.5rem;
@@ -75,17 +75,17 @@
 			height: 2.5rem;
 
 			form {
-				@include m.flex($align-items: center);
+				@include mixin.flex($align-items: center);
 				flex: 1;
 				height: 100%;
 				position: relative;
 			}
 
 			.search-icon {
-				@include m.flex($justify-content: center, $align-items: center);
+				@include mixin.flex($justify-content: center, $align-items: center);
 				border-radius: 0 2.5rem 2.5rem 0;
-				border: 1px solid v.$dark-theme-border;
-				background-color: v.$dark-theme-bg-3;
+				border: 1px solid var.$dark-theme-border;
+				background-color: var.$dark-theme-bg-3;
 				cursor: pointer;
 				width: 4rem;
 				height: 100%;
@@ -93,37 +93,36 @@
 			}
 
 			.search-box {
-				@include m.flex($align-items: center);
+				@include mixin.flex($align-items: center);
 				height: 2.5rem;
 				border-radius: 2.5rem 0 0 2.5rem;
 				padding: 0 0.25rem 0 1rem;
-				border: 1px solid v.$dark-theme-border;
-				background-color: v.$dark-theme-bg-4;
+				border: 1px solid var.$dark-theme-border;
+				background-color: var.$dark-theme-bg-4;
 				width: 100%;
 				margin-left: 2rem;
 				position: relative;
 
 				.keyboard-icon {
-					@include m.circular-icon();
+					@include mixin.circular-icon();
 				}
 
 				.visible-when-focus {
-					@include m.fix-position($position: absolute, $left: 0);
+					@include mixin.fix-position($position: absolute, $left: 0);
 
 					display: none;
-					color: v.$dark-theme-text;
+					color: var.$dark-theme-text;
 					padding: 0 1.25rem;
 					background-color: transparent;
 
 					i {
+						@include mixin.font-set();
 						background-color: transparent;
-						font-size: 0.875rem;
-						color: v.$dark-theme-text;
 					}
 				}
 
 				.visible-when-enter {
-					@include m.circular-icon($hover-bg: v.$dark-theme-hover-bg);
+					@include mixin.circular-icon($hover-bg: var.$dark-theme-hover-bg);
 					display: none;
 				}
 
@@ -143,7 +142,7 @@
 					height: auto;
 					width: 100%;
 					outline: none;
-					background-color: v.$dark-theme-bg-4;
+					background-color: var.$dark-theme-bg-4;
 				}
 
 				input:not(:placeholder-shown) + .keyboard-icon {
@@ -151,26 +150,26 @@
 						padding-right: 1.5rem;
 					}
 					& + .visible-when-enter {
-						@include m.flex($justify-content: center, $align-items: center);
-						@include m.fix-position($position: absolute, $right: 0);
+						@include mixin.flex($justify-content: center, $align-items: center);
+						@include mixin.fix-position($position: absolute, $right: 0);
 					}
 				}
 			}
 		}
 
 		.voice-icon {
-			@include m.circular-icon(
+			@include mixin.circular-icon(
 				$margin: (
 					0 0 0 0.25rem,
 				),
-				$bg: v.$dark-theme-bg-2,
-				$hover-bg: v.$dark-theme-hover-bg
+				$bg: var.$dark-theme-bg-2,
+				$hover-bg: var.$dark-theme-hover-bg
 			);
 		}
 	}
 	&-end {
-		@include m.flex($justify-content: flex-end, $align-items: center);
-		@include media.header-sm {
+		@include mixin.flex($justify-content: flex-end, $align-items: center);
+		@include media.xsm {
 			min-width: 0;
 		}
 
@@ -182,32 +181,32 @@
 				$m: (0 0.5rem 0 0);
 			}
 			.icon-wrapper:nth-child(#{$i}) {
-				@include m.circular-icon($margin: $m, $hover-bg: v.$dark-theme-hover-bg);
+				@include mixin.circular-icon($margin: $m, $hover-bg: var.$dark-theme-hover-bg);
 			}
 		}
 	}
 
 	.button {
 		&-hamburger {
-			@include m.icon($bg: transparent);
+			@include mixin.icon($bg: transparent);
 		}
 		&-magnifying-glass {
-			@include m.icon();
+			@include mixin.icon();
 		}
 		&-voice {
-			@include m.icon();
+			@include mixin.icon();
 		}
 		&-video {
-			@include m.icon();
+			@include mixin.icon();
 		}
 		&-alarm {
-			@include m.icon($size: 1.25rem);
+			@include mixin.icon($size: 1.25rem);
 		}
 		&-user {
-			@include m.icon($size: 1.25rem);
+			@include mixin.icon($size: 1.25rem);
 		}
 		&-xmark {
-			@include m.icon($size: 1.25rem);
+			@include mixin.icon($size: 1.25rem);
 		}
 	}
 }
