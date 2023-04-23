@@ -8,9 +8,9 @@
 
 > cd /
 >
-> npm install percel
+> npm install parcel
 >
-> percel index.html
+> parcel index.html
 
 ## 👩‍💻 요구 사항과 구현 내용 <!-- 기능을 Commit 별로 잘개 쪼개고, Commit 별로 설명해주세요 -->
 
